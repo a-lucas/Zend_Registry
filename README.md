@@ -33,18 +33,18 @@ In the applications.ini, you can set up these options :
 Usage
 -----
 
-  $registry = new Zend_Registry_Store();
-  //user make a search
-  $registry->set("LastSearch", $searchCriteria, Zend_Registry_Store::cookie);
-  //User logins
-  $registry->set("LastLoginDate", @date("d-m-Y H:i:s"), Zend_Registry_Store::session);            
-  if($registry->has("LastSearch")){
-    //remove the cookie, and store the data in a session instead
-    $lastSearchCriteria = $registry->LastSearch;
-    $registry->set("LastSearch", $lastSearchCriteria, Zend_Registry_Store::session);
-    //or
-    $registry->set("LastSearch", $registry->LastSearch, Zend_Registry_Store::session);
-  }
+    $registry = new Zend_Registry_Store();
+    //user make a search
+    $registry->set("LastSearch", $searchCriteria, Zend_Registry_Store::cookie);
+    //User logins
+    $registry->set("LastLoginDate", @date("d-m-Y H:i:s"), Zend_Registry_Store::session);            
+    if($registry->has("LastSearch")){
+      //remove the cookie, and store the data in a session instead
+      $lastSearchCriteria = $registry->LastSearch;
+      $registry->set("LastSearch", $lastSearchCriteria, Zend_Registry_Store::session);
+      //or
+      $registry->set("LastSearch", $registry->LastSearch, Zend_Registry_Store::session);
+    }
 
     //User Logout
 
